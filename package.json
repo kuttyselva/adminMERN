@@ -23,5 +23,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuttyselva/adminMERN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kuttyselva/adminMERN/issues"
+  },
+  "homepage": "https://github.com/kuttyselva/adminMERN#readme"
 }
