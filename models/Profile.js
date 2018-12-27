@@ -21,7 +21,7 @@ const ProfileSchema=new Schema({
     location:{
         type:String
     },
-    state:{
+    status:{
         type:String,
         required:true
     },
@@ -63,7 +63,7 @@ const ProfileSchema=new Schema({
         }
 
     }],
-    experience:[{
+    education:[{
         school:{
         type:String,
         required:true
@@ -93,7 +93,7 @@ const ProfileSchema=new Schema({
 
     }],
     social:{
-        website:{
+        web:{
             type:String
         },
        twitter:{

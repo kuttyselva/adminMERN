@@ -2,6 +2,7 @@ const express= require('express');
 const router= express.Router();
 const mongoose=require('mongoose');
 const passport=require('passport');
+const validateProfileInput=require('../../validation/profile');
 //load profile
 const Profile=require('../../models/Profile');
 //load user
@@ -16,6 +17,7 @@ router.get('/test',(req,res)=>res.json({msg:"profile works"}));
 router.get('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
     const errors={};
    Profile.findOne({user:req.user.id})
+   .populate('user',['name','avatar'])
     .then(profile=>{
         if(!profile){
             errors.noprofile='there is no profile for this user';
@@ -30,6 +32,11 @@ router.get('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
 //@desc     create/edit profile
 //@access   private
 router.post('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
+    const {errors,isValid}=validateProfileInput(req.body);
+    if(!isValid){
+        //return errors
+        return res.status(400).json(errors);
+    }
    //get fields
    const profilefield = {};
    profilefield.user=req.user.id;
@@ -46,12 +53,13 @@ router.post('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
    }
    //social
    profilefield.social={};
-   if(req.body.website)    profilefield.social.website=req.body.website;
+   if(req.body.web)    profilefield.social.web=req.body.web;
    if(req.body.twitter)    profilefield.social.twitter=req.body.twitter;
    if(req.body.facebook)    profilefield.social.facebook=req.body.facebook;
    if(req.body.linkedin)    profilefield.social.linkedin=req.body.linkedin;
    if(req.body.instagram)    profilefield.social.instagram=req.body.instagram;
   Profile.findOne({user:req.user.id})
+  
    .then(profile =>{
        if(profile){
            Profile.findOneAndUpdate({user:req.user.id},{$set:profilefield},{new:true})
@@ -68,13 +76,7 @@ Profile.findOne({handle:profilefield.handle}).then(profile =>{
     //save profile
     new Profile(profilefield).save().then(profile =>res.json(profile));
 })
-       }
+    }
    })
-
-   
 });
-
-
-
-
 module.exports=router;
