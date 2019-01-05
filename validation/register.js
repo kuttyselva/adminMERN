@@ -28,7 +28,7 @@ errors.name='name must between 2 o 30 characters';
         errors.password2='password must match';
     }
     if(!Validator.isLength(data.password,{min:6,max:30})){
-        errors.password='password ust be atleast 6 charcters';
+        errors.password='password must be atleast 6 charcters';
     }
     return{
         errors,
