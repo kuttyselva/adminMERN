@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import jwt_decode from 'jwt-decode';
 // import setAuthToken from '../utils/setAuthToken';
-import {GET_ERRORS , GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE} from './types';
+import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE} from './types';
 export const getCurrentProfile=()=>dispatch =>{
     dispatch(setProfileLoading());
     axios.get('/api/profile')
