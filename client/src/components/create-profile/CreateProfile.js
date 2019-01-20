@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
 import Textfieldgrp from '../common/Textfieldgrp';
 import Inputgrp from '../common/Inputgrp';
 import Selectlistgrp from '../common/Selectlistgrp';
 import Textareagrp from '../common/Textareagrp';
+import {createProfile} from '../../actions/profileActions';
 
 class CreateProfile extends Component{
     constructor(props){
@@ -28,12 +30,33 @@ class CreateProfile extends Component{
         this.onChange =this.onChange.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
     }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.errors){
+            this.setState({errors:nextProps.errors});
+        }
+    }
     onSubmit(e){
         e.preventDefault();
-        console.log('submit');
+        const profileData={
+            handle: this.state.handle,
+      company: this.state.company,
+      website: this.state.website,
+      location: this.state.location,
+      status: this.state.status,
+      skills: this.state.skills,
+      gituser: this.state.gituser,
+      bio: this.state.bio,
+      twitter: this.state.twitter,
+      facebook: this.state.facebook,
+      linkedin: this.state.linkedin,
+      youtube: this.state.youtube,
+      instagram: this.state.instagram
+        }
+        this.props.createProfile(profileData,this.props.history);
     }
     onChange(e){
-        this.state({[e.target.name]:e.target.value});
+       
+        this.setState({[e.target.name]: e.target.value});
     }
     render(){
         const {errors,displaySocial}=this.state;
@@ -90,16 +113,16 @@ class CreateProfile extends Component{
             {label:'Other',value:'Other'},
         ];
   return (
-    <div class="create-profile">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 m-auto">
-          <a href="dashboard.html" class="btn btn-light">
+    <div className="create-profile">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-8 m-auto">
+          <a href="dashboard.html" className="btn btn-light">
             Go Back
           </a>
-          <h1 class="display-4 text-center">Create Your Profile</h1>
-          <p class="lead text-center">Let's get some information to make your profile stand out</p>
-          <small class="d-block pb-3">* = required field</small>
+          <h1 className="display-4 text-center">Create Your Profile</h1>
+          <p className="lead text-center">Let's get some information to make your profile stand out</p>
+          <small className="d-block pb-3">* = required field</small>
           <form onSubmit={this.onSubmit}>
             <Textfieldgrp 
                 placeholder="* Profile handle"
@@ -163,17 +186,17 @@ class CreateProfile extends Component{
             
            
 
-            <div class="mb-3">
-              <button onClick={()=>{
+            <div className="mb-3">
+              <button type="button" onClick={()=>{
                   this.setState(pervState =>({
                       displaySocial:!pervState.displaySocial
                   }))
-              }} class="btn btn-light">Add Social Network Links</button>
-              <span class="text-muted">Optional</span>
+              }} className="btn btn-light">Add Social Network Links</button>
+              <span className="text-muted">Optional</span>
             </div>
                 {socialinputs}
             
-            <input type="submit" class="btn btn-info btn-block mt-4" />
+            <input type="submit" className="btn btn-info btn-block mt-4" />
           </form>
         </div>
       </div>
@@ -192,4 +215,4 @@ const mapStateToProps=state=>({
     profile:state.profile,
     errors:state.errors
 })
-export default connect(mapStateToProps)(CreateProfile);
+export default connect(mapStateToProps,{createProfile})(withRouter(CreateProfile));

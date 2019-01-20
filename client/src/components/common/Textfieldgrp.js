@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 const Textfieldgrp=({
-    name,placeholder,value,label,error,info,type,onChange,disabled
+    name,placeholder,value,error,info,type,onChange,disabled
 })=>{
     return(
         <div className="form-group">
@@ -15,7 +15,7 @@ const Textfieldgrp=({
 Textfieldgrp.propTypes={
     name:PropTypes.string.isRequired,
     placeholder:PropTypes.string,
-    value:PropTypes.string.isRequired,
+    value:PropTypes.string,
     info:PropTypes.string,
     error:PropTypes.string,
     type:PropTypes.string.isRequired,
