@@ -12,7 +12,7 @@ import {connect} from 'react-redux'
   return (
     <div className="landing">
     <div className="dark-overlay landing-inner text-light">
-      <div className="container">
+     
         <div className="row">
           <div className="col-md-12 text-center">
             <h1 className="display-3 mb-4">Developer Connector
@@ -25,7 +25,7 @@ import {connect} from 'react-redux'
         </div>
       </div>
     </div>
-  </div>
+ 
   );
 }
 

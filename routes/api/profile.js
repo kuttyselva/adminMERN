@@ -102,7 +102,7 @@ router.post('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
    if(req.body.handle)    profilefield.handle=req.body.handle;
    if(req.body.company)    profilefield.company=req.body.company;
    if(req.body.website)    profilefield.website=req.body.website;
-   if(req.body.loaction)    profilefield.loaction=req.body.loaction;
+   if(req.body.location)    profilefield.location=req.body.location;
    if(req.body.bio)    profilefield.bio=req.body.bio;
    if(req.body.status)    profilefield.status=req.body.status;
    if(req.body.githubuser)    profilefield.githubuser=req.body.githubuser;
@@ -153,7 +153,7 @@ router.post('/experience',passport.authenticate('jwt',{session:false}),(req,res)
         const newexp={
             title:req.body.title,
             company:req.body.company,
-            loaction:req.body.loaction,
+            location:req.body.location,
             from:req.body.from,
             to:req.body.to,
             current:req.body.current,
