@@ -218,7 +218,7 @@ class CreateProfile extends Component{
                 value={this.state.githubuser}
                 onChange={this.onChange}
                 error={errors.githubuser} 
-                info="Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)"/>              
+                info="Enter your github username"/>              
             <Textareagrp 
                 placeholder="A short bio of yourself"
                 name="bio"

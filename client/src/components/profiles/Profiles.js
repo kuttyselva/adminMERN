@@ -27,8 +27,8 @@ class Profiles extends Component {
     }
 
     return (
-      <div className="profiles">
-        <div className="container">
+      <div className="profiles" style={{margin:'50px'}}>
+        
           <div className="row">
             <div className="col-md-12">
               <h1 className="display-4 text-center">Developer Profiles</h1>
@@ -37,8 +37,10 @@ class Profiles extends Component {
               </p>
               {profileItems}
             </div>
-          </div>
+          
+          <br/><br/><br/><br/><br/>
         </div>
+       
       </div>
     );
   }
