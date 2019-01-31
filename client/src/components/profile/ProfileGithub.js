@@ -8,7 +8,7 @@ class ProfileGithub extends Component {
     this.state = {
       clientId: 'aee4c7c8b0a4ceb688cd',
       clientSecret: '8579080409bb175acd21dfb38beb33fc36480ba9',
-      count: 5,
+      count: 8,
       sort: 'created: asc',
       repos: []
     };
@@ -34,9 +34,14 @@ class ProfileGithub extends Component {
     const { repos } = this.state;
 
     const repoItems = repos.map(repo => (
-      <div key={repo.id} className="card card-body mb-2">
+
+
+
+
+
+      <div key={repo.id} className="card card-body  w-100">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-8">
             <h4>
               <a href={repo.html_url} className="text-dark" >
                 {repo.name}
@@ -44,7 +49,7 @@ class ProfileGithub extends Component {
             </h4>
             <p>{repo.description}</p>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <span className="badge badge-dark mr-1">
               Stars: {repo.stargazers_count}
             </span>
@@ -59,10 +64,12 @@ class ProfileGithub extends Component {
       </div>
     ));
     return (
-      <div ref="myRef">
-        <hr />
-        <h3 className="mb-4">Latest Github Repos</h3>
+      <div ref="myRef" >
+       
+        <h3 className="text-center mb-4">Latest Github Repos</h3>
+        <br/>
         {repoItems}
+        <br/><br/>
       </div>
     );
   }

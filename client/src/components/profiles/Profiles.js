@@ -38,9 +38,9 @@ class Profiles extends Component {
               {profileItems}
             </div>
           
-          <br/><br/><br/><br/><br/>
-        </div>
        
+        </div>
+        <br/><br/><br/>
       </div>
     );
   }

@@ -47,4 +47,5 @@ export const logoutUser=()=>dispatch=>{
     setAuthToken(false);
     //set current user to  {} isauthenticated to false
     dispatch(setCurrentUser({}));
+    
 }

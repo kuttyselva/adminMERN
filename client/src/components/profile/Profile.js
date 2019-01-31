@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import ProfileHeader from './ProfileHeader';
-import ProfileAbout from './ProfileAbout';
-import ProfileCreds from './ProfileCreds';
+
 import ProfileGithub from './ProfileGithub';
 import Spinner from '../common/Spinner';
 import { getProfileByHandle } from '../../actions/profileActions';
@@ -36,11 +35,11 @@ class Profile extends Component {
             <div className="col-md-6" />
           </div>
           <ProfileHeader profile={profile} />
-          <ProfileAbout profile={profile} />
+          {/* <ProfileAbout profile={profile} />
           <ProfileCreds
             education={profile.education}
             experience={profile.experience}
-          />
+          /> */}
           {profile.githubuser ? (
             <ProfileGithub username={profile.githubuser} />
           ) : null}
