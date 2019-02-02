@@ -20,6 +20,8 @@ import Addexp from './components/add-credentials/Addexp';
 import Addedu from './components/add-credentials/Addedu';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import NotFound from './components/not-found/NotFound';
 
 //check for token
@@ -69,6 +71,12 @@ class App extends Component {
         <Switch>
         <PrivateRoute exact path="/add-education" component={Addedu}/>
         </Switch>
+        <Switch>
+        <PrivateRoute exact path="/feed" component={Posts}/>
+        </Switch>
+        <Switch>
+                <PrivateRoute exact path="/post/:id" component={Post} />
+              </Switch>
         <Route exact path="/not-found" component={NotFound}/>
         <Footer/>
       </div>

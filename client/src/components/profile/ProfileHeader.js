@@ -77,7 +77,7 @@ class ProfileHeader extends Component {
    
   </div>
 </div>
- 
+ <br/>
 </div>
 
 
@@ -267,7 +267,7 @@ class ProfileHeader extends Component {
       </div>
       
       <div className="section-wrapper clearfix">
-        <h3 className="section-title">Hobbies</h3> 
+        <h3 className="section-title">Education</h3> 
         <div>
         
         

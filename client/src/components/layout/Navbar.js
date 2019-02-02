@@ -15,7 +15,16 @@ class Navbar extends Component {
       const {isAuthenticated,user} =this.props.auth;
       const authLinks =(
       <ul className="navbar-nav ml-auto">
-       
+       <li className="nav-item">
+          <Link className="nav-link" to="/feed">
+            Post Feed
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
+          </Link>
+        </li>
       <li className="nav-item">
         <a href="" onClick={this.onLogoutClick.bind(this)} className="nav-link">
         <img className="rounded-circle" src={user.avatar} alt={user.name} title="you must have a gravatar connected to your gmail" style={{width:'30px' ,marginRight:'5px' }}/>{ ' '}
@@ -34,7 +43,7 @@ class Navbar extends Component {
    </ul>);
   return (
     <div>
-      <nav className="navbar  navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar  navbar-expand-sm fixed-top navbar-light bg-light  mb-4">
  
       <Link className="navbar-brand" to="/">DevConnector</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
