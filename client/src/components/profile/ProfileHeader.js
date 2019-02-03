@@ -133,7 +133,7 @@ class ProfileHeader extends Component {
          <div className="clearfix"></div>
  </div>
       <div className="name-wrapper">
-        <h1>{profile.user.name}</h1>
+        <h1>{profile.handle}</h1>
       </div>
       <div className="clearfix"></div>
       <div className="contact-info clearfix" style={{marginLeft:'30%',fontSize:'24px',width:'100%'}}>
