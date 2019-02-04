@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+SC:700);
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -7,13 +9,6 @@
 html, body {
   height: 100%;
 }
-
-
-
-
-
-
-
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -23,6 +18,7 @@ body {
 
 a {
   color: #66cc99;
+  font-family: 'Alegreya SC', serif;
   text-decoration: none;
 }
 
@@ -53,7 +49,7 @@ a {
 .profile h1 {
   font-size: 2.5em;
   text-align: left;
-  font-family: 'Varela Round', sans-serif;
+
   color: #4a4e51;
   text-transform: uppercase;
   line-height: 1em;
@@ -73,7 +69,7 @@ a {
 .profile h1 {
   font-size: 2.5em;
   text-align: left;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Alegreya SC', serif;
   color: #000000;
   text-transform: uppercase;
   line-height: 1em;
@@ -219,7 +215,7 @@ a {
   width: 100%;
   float: left;
   position: relative;
-  color: #9099a0;
+  color: #ffffff;
   font-weight: 300;
   min-height: 100%;
   min-height: 100vh;
@@ -232,6 +228,7 @@ a {
 .experience h3.experience-title {
   color: #66cc99;
   text-align: left;
+  font-family: 'Alegreya SC', serif;
   text-transform: uppercase;
   font-size: 2em;
   margin-bottom: 20px;
@@ -300,15 +297,18 @@ a {
 }
 .section-wrapper h3.section-title {
   color: #66cc99;
+  font-family: 'Alegreya SC', serif;
   text-align: left;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 2em;
   margin-bottom: 20px;
   font-weight: 400;
 }
 .section-wrapper .skill-percentage {
   margin-bottom: 10px;
   position: relative;
+  font-size: 1.5em;
+  color: #ffffff;
 }
 .section-wrapper .skill-percentage::after {
   content: "";

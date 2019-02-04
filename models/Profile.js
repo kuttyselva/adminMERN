@@ -74,7 +74,7 @@ const ProfileSchema=new Schema({
         },
         field:{
             type:String,
-            required:true
+           
         },
         from:{
             type:Date,

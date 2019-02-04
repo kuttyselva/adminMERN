@@ -5,7 +5,7 @@ module.exports=function validatedupInput(data){
    
     data.school=!isEmpty(data.school)? data.school : '';
     data.degree=!isEmpty(data.degree)? data.degree : '';
-    data.field=!isEmpty(data.field)? data.field : '';
+    
     data.from=!isEmpty(data.from)? data.from : '';
   
     
@@ -15,9 +15,7 @@ module.exports=function validatedupInput(data){
     if(Validator.isEmpty(data.degree)){
         errors.degree='company is invalid';
     }
-    if(Validator.isEmpty(data.field)){
-        errors.field='field is invalid';
-    }
+    
     if(Validator.isEmpty(data.from)){
         errors.from='from date is required';
     }

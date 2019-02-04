@@ -7,6 +7,7 @@ import Moment from 'react-moment';
 class ProfileHeader extends Component {
   render() {
     const { profile } = this.props;
+    
     const { experience, education } = this.props.profile;
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
@@ -20,7 +21,7 @@ class ProfileHeader extends Component {
       <div>
       
     <div className="company-wrapper clearfix" key={exp._id}>
-      		<div className="experience-title">{exp.company}</div>
+      		<div className="experience-title"><h2>{exp.company}</h2></div>
           <div className="time"><p>
           <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
           {exp.to === null ? (
@@ -30,11 +31,10 @@ class ProfileHeader extends Component {
           )}
         </p></div> 
         </div>
-      	
-        
+      	        
          <div className="job-wrapper clearfix">
-        	<div className="experience-title">{exp.title}</div> 
-          <div className="company-description">
+        	<div className="experience-title"><h2>{exp.title}</h2></div> 
+          <div className="company-description" >
           <p>
           {exp.description === '' ? null : (
             <span>
@@ -54,10 +54,10 @@ class ProfileHeader extends Component {
 
 
 <div style={{color:'#000000'}}> 
-<div class="card w-100">
+<div class="card w-100" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
   <div class="card-body">
     <h5 class="card-title text-center">Institution</h5>
-    <p class="card-text">{edu.school} <br/>  <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
+    <p class="card-text" style={{fontSize:'1.2em'}}>{edu.school} <br/>  <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
             {edu.to === null ? (
               ' Now'
             ) : (
@@ -101,7 +101,7 @@ class ProfileHeader extends Component {
 		<div >
 			<div className="picture-resume-wrapper">
         <div className="picture-resume">
-        <span><img src= {profile.user.avatar} alt="" /></span>
+        <span><img src= {profile.user.avatar} alt="" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}} /></span>
         <svg version="1.1" viewBox="0 0 350 350">
   
   <defs>
@@ -136,25 +136,25 @@ class ProfileHeader extends Component {
         <h1>{profile.handle}</h1>
       </div>
       <div className="clearfix"></div>
-      <div className="contact-info clearfix" style={{marginLeft:'30%',fontSize:'24px',width:'100%'}}>
+      <div className="contact-info clearfix" style={{marginLeft:'-10%',fontSize:'24px',width:'100%'}}>
       
       	<ul className="list-titles">
       		<li>Status</li>
       		<li>Works at</li>
-      		<li>Location</li>
+      		<li>Mail</li>
       	</ul>
         <ul className="list-content ">
         	<li>{profile.status}</li> 
         	<li>{isEmpty(profile.company) ? null : <p> {profile.company}</p>}</li>
-        	<li>{isEmpty(profile.location) ? null : <p>{profile.location}</p>}</li>
+        	<li>{isEmpty(profile.location) ? null : <p>{profile.user.email}</p>}</li>
         </ul>
       </div>
-      <div className="contact-presentation" style={{marginLeft:'30%'}}>
+      <div className="contact-presentation" style={{marginLeft:'-10%',fontSize:'24px'}}>
       <h4 className="text-center">Bio</h4>
-      	<h5>{profile.bio} </h5>
+      	<p className="text-center">{profile.bio} </p>
     
       </div>
-      <div className="contact-social clearfix" style={{marginLeft:'30%'}}>
+      <div className="contact-social clearfix" style={{marginLeft:'-10%'}}>
       	<ul>
         <p>
                 {isEmpty(profile.website) ? null : (
@@ -239,7 +239,7 @@ class ProfileHeader extends Component {
       
 
 
-      <div className="row">
+      <div className="row" >
         
         
           {expItems.length > 0 ? (
@@ -268,7 +268,7 @@ class ProfileHeader extends Component {
       
       <div className="section-wrapper clearfix">
         <h3 className="section-title">Education</h3> 
-        <div>
+        <div >
         
         
         {expItems.length > 0 ? (

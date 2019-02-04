@@ -64,6 +64,7 @@ class Addedu extends Component {
 
     return (
       <div className="add-education">
+      <br/><br/><br/>
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
@@ -77,21 +78,21 @@ class Addedu extends Component {
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <Textfieldgrp
-                  placeholder="* School"
+                  placeholder="* School or college"
                   name="school"
                   value={this.state.school}
                   onChange={this.onChange}
                   error={errors.school}
                 />
                 <Textfieldgrp
-                  placeholder="* Degree or Certification"
+                  placeholder="Standard or Degree"
                   name="degree"
                   value={this.state.degree}
                   onChange={this.onChange}
                   error={errors.degree}
                 />
                 <Textfieldgrp
-                  placeholder="* Field of Study"
+                  placeholder="If college enter Field of Study"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.onChange}
@@ -125,7 +126,7 @@ class Addedu extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    Current Job
+                    Currently Studying
                   </label>
                 </div>
                 <Textareagrp
@@ -139,7 +140,7 @@ class Addedu extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-dark btn-block mt-4"
                 />
               </form>
             </div>

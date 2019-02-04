@@ -42,7 +42,7 @@ class Navbar extends Component {
      </li>
    </ul>);
   return (
-    <div>
+    <div style={{width:'80%'}}>
       <nav className="navbar  navbar-expand-sm fixed-top navbar-light bg-light  mb-4">
  
       <Link className="navbar-brand" to="/">DevConnector</Link>

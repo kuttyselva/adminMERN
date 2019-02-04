@@ -78,7 +78,9 @@ User.findOne({email})
         bcrypt.compare(password,user.password).then(isMatch => {
             if(isMatch){
                 //user match
-                const payload={id:user.id,name:user.name,avatar:user.avatar};
+                const payload={id:user.id,
+                    name:user.name,avatar:user.avatar,
+                email:user.email};
 
 
                 // res.json({msg:'success'});

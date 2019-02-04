@@ -31,7 +31,7 @@ class PostItem extends Component {
     const { post, auth, showActions } = this.props;
 
     return (
-      <div className="card card-body mb-3">
+      <div className="card card-body mb-3" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
         <div className="row">
           <div className="col-md-2">
             <a href="profile.html">
@@ -39,6 +39,7 @@ class PostItem extends Component {
                 className="rounded-circle d-none d-md-block"
                 src={post.avatar}
                 alt=""
+                style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}
               />
             </a>
             <br />
@@ -46,6 +47,7 @@ class PostItem extends Component {
           </div>
           <div className="col-md-10">
             <p className="lead">{post.text}</p>
+            <br/><br/><br/>
             {showActions ? (
               <span>
                 <button

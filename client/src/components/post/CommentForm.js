@@ -46,9 +46,9 @@ class CommentForm extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="post-form mb-3">
+      <div className="post-form mb-3" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
         <div className="card card-info">
-          <div className="card-header bg-info text-white">
+          <div className="card-header bg-dark text-white">
             Make a comment...
           </div>
           <div className="card-body">
