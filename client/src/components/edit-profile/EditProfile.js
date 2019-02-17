@@ -16,7 +16,7 @@ class CreateProfile extends Component{
             displaySocial:false,
             handle:'',
             company:'',
-            website:'',
+            dob:'',
             location:'',
             status:'',
             skills:'',
@@ -41,7 +41,7 @@ class CreateProfile extends Component{
             const skillscsv=profile.skills.join(',');
             //if profile field not exist , make it empty string
             profile.company=!isEmpty(profile.company)?profile.company:'';
-            profile.website=!isEmpty(profile.website)?profile.website:'';
+            profile.dob=!isEmpty(profile.dob)?profile.dob:'';
             profile.location=!isEmpty(profile.location)?profile.location:'';
             profile.githubuser=!isEmpty(profile.githubuser)?profile.githubuser:'';
             profile.bio=!isEmpty(profile.bio)?profile.bio:'';
@@ -64,8 +64,10 @@ class CreateProfile extends Component{
         //set components to field state
         this.setState({ handle: profile.handle,
             company: profile.company,
-            website: profile.website,
-            location: profile.location,
+           
+            dob: profile.dob,
+        lang: profile.lang,
+        location:profile.location,
             status: profile.status,
             skills: skillscsv,
             githubuser: profile.githubuser,
@@ -85,7 +87,8 @@ class CreateProfile extends Component{
         const profileData={
             handle: this.state.handle,
       company: this.state.company,
-      website: this.state.website,
+      dob: this.state.dob,
+      lang: this.state.lang,
       location: this.state.location,
       status: this.state.status,
       skills: this.state.skills,
@@ -191,13 +194,13 @@ class CreateProfile extends Component{
                 onChange={this.onChange}
                 error={errors.company} 
                 info="Could be your own company or one you work for"/>
-            <Textfieldgrp 
-                placeholder="Website"
-                name="website"
-                value={this.state.website}
+           <Textfieldgrp 
+                placeholder="Date od Birth"
+                name="dob"
+                value={this.state.dob}
                 onChange={this.onChange}
-                error={errors.website} 
-                info="Could be your own or a company website"/>  
+                error={errors.dob} 
+                info="Enter DoB (eg. 05-july-1999)"/>  
             <Textfieldgrp 
                 placeholder="Location"
                 name="location"
@@ -212,6 +215,13 @@ class CreateProfile extends Component{
                 onChange={this.onChange}
                 error={errors.skills} 
                 info="Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)"/> 
+            <Textfieldgrp 
+                placeholder="Known Languages"
+                name="lang"
+                value={this.state.lang}
+                onChange={this.onChange}
+                error={errors.lang} 
+                info="Please use comma separated values (eg. Tamil,English)"/> 
             <Textfieldgrp 
                 placeholder="Github Username"
                 name="githubuser"

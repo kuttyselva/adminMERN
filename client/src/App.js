@@ -18,12 +18,12 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
 import Addexp from './components/add-credentials/Addexp';
 import Addedu from './components/add-credentials/Addedu';
+import Addach from './components/add-credentials/Addach';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import NotFound from './components/not-found/NotFound';
-
 //check for token
 if(localStorage.jwtToken){
   //seetauth token header
@@ -67,6 +67,9 @@ class App extends Component {
         </Switch>
         <Switch>
         <PrivateRoute exact path="/add-experience" component={Addexp}/>
+        </Switch>
+        <Switch>
+        <PrivateRoute exact path="/add-achievement" component={Addach}/>
         </Switch>
         <Switch>
         <PrivateRoute exact path="/add-education" component={Addedu}/>

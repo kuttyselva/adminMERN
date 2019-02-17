@@ -5,6 +5,7 @@ const passport=require('passport');
 const validateProfileInput=require('../../validation/profile');
 const validateExpInput=require('../../validation/experience');
 const validateEduInput=require('../../validation/education');
+const validateAchInput=require('../../validation/achieve');
 //load profile
 const Profile=require('../../models/Profile');
 //load user
@@ -101,8 +102,9 @@ router.post('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
    profilefield.user=req.user.id;
    if(req.body.handle)    profilefield.handle=req.body.handle;
    if(req.body.company)    profilefield.company=req.body.company;
-   if(req.body.website)    profilefield.website=req.body.website;
+   if(req.body.dob)    profilefield.dob=req.body.dob;
    if(req.body.location)    profilefield.location=req.body.location;
+   
    if(req.body.bio)    profilefield.bio=req.body.bio;
    if(req.body.status)    profilefield.status=req.body.status;
    if(req.body.githubuser)    profilefield.githubuser=req.body.githubuser;
@@ -110,6 +112,9 @@ router.post('/',passport.authenticate('jwt',{session:false}),(req,res)=>{
    if(typeof req.body.skills !== 'undefined'){
        profilefield.skills = req.body.skills.split(',');
    }
+   if(typeof req.body.lang !== 'undefined'){
+    profilefield.lang = req.body.lang.split(',');
+}
    //social
    profilefield.social={};
    if(req.body.web)    profilefield.social.web=req.body.web;
@@ -165,6 +170,30 @@ router.post('/experience',passport.authenticate('jwt',{session:false}),(req,res)
     })
 });
 
+// @route   get api/profile/experience
+//@desc     current profile
+//@access   private
+router.post('/achieve',passport.authenticate('jwt',{session:false}),(req,res)=>{
+    const {errors,isValid}=validateAchInput(req.body);
+    if(!isValid){
+        //return errors
+        return res.status(400).json(errors);
+    }
+    Profile.findOne({user:req.user.id})
+    .then(profile=>{
+        const newach={
+            venue:req.body.venue,
+            event:req.body.event,
+            award:req.body.award,
+           
+            description:req.body.description
+        }
+        //add to exp
+        profile.achieve.unshift(newach);
+        profile.save().then(profile => res.json(profile));
+    })
+});
+
 
 // @route   get api/profile/education
 //@desc   edu add to profile
@@ -205,6 +234,24 @@ router.delete('/experience/:exp_id',passport.authenticate('jwt',{session:false})
        .indexOf(req.params.exp_id);
        //splice out array
        profile.experience.splice(removeind,1);
+       //save
+       profile.save().then(profile=>res.json(profile));
+       })
+       .catch(err=> res.status(404).json(err));
+    });
+    // @route   DELETE api/profile/achieve/:achid
+//@desc   delete to profile
+//@access   private
+router.delete('/achieve/:ach_id',passport.authenticate('jwt',{session:false}),(req,res)=>{
+    
+    Profile.findOne({user:req.user.id})
+    .then(profile=>{
+       //get remove index
+       const removeind=profile.achieve
+       .map(item =>item.id)
+       .indexOf(req.params.ach_id);
+       //splice out array
+       profile.achieve.splice(removeind,1);
        //save
        profile.save().then(profile=>res.json(profile));
        })

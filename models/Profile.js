@@ -12,14 +12,18 @@ const ProfileSchema=new Schema({
         required: true,
         max:40
     },
+    
     company:{
         type:String
     },
-    website:{
+    dob:{
         type:String
     },
     location:{
         type:String
+    },
+    lang:{
+        type:[String]
     },
     status:{
         type:String,
@@ -86,6 +90,24 @@ const ProfileSchema=new Schema({
        current:{
         type:Boolean,
         default:false
+        },
+        description:{
+            type:String
+        }
+
+    }],
+    achieve:[{
+        venue:{
+        type:String,
+        required:true
+        },
+        event:{
+        type:String,
+        required:true
+        },
+        award:{
+            type:String,
+           
         },
         description:{
             type:String

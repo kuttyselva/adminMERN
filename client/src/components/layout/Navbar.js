@@ -45,7 +45,7 @@ class Navbar extends Component {
     <div style={{width:'80%'}}>
       <nav className="navbar  navbar-expand-sm fixed-top navbar-light bg-light  mb-4">
  
-      <Link className="navbar-brand" to="/">DevConnector</Link>
+      <Link className="navbar-brand" to="/">Hash&lt; &#47;&gt;</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

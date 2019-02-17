@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render(){
   return (
     <footer className="fixed-bottom  bg-light text-dark mt-5 p-4 text-center">
-    Copyright &copy; {new Date().getFullYear()}  Dev Connector 
+    Copyright &copy; {new Date().getFullYear()}  Hash&lt; &#47;&gt;
   </footer>
   );
 }

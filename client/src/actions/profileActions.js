@@ -84,6 +84,17 @@ export const addEducation = (eduData, history) => dispatch => {
             })
           );
       };
+      export const addAchieve = (achData, history) => dispatch => {
+        axios
+          .post('/api/profile/achieve', achData)
+          .then(res => history.push('/dashboard'))
+          .catch(err =>
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data
+            })
+          );
+      };
       // Add experience
 export const addExperience = (expData, history) => dispatch => {
     axios
@@ -113,7 +124,22 @@ export const deleteExperience = id => dispatch => {
         })
       );
   };
-  
+  export const deleteAchieve = id => dispatch => {
+    axios
+      .delete(`/api/profile/achieve/${id}`)
+      .then(res =>
+        dispatch({
+          type: GET_PROFILE,
+          payload: res.data
+        })
+      )
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+  };
   // Delete Education
   export const deleteEducation = id => dispatch => {
     axios

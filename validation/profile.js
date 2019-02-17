@@ -22,11 +22,7 @@ module.exports=function validateProfileInput(data){
      if(Validator.isEmpty(data.skills)){
         errors.skills='skills is required';
     }
-    if(!isEmpty(data.website)){
-        if(!Validator.isURL(data.website)){
-            errors.website='url invalid';
-        }
-    }
+  
     if(!isEmpty(data.web)){
         if(!Validator.isURL(data.web)){
             errors.web='url invalid';

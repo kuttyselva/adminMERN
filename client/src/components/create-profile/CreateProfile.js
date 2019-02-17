@@ -15,7 +15,8 @@ class CreateProfile extends Component{
             displaySocial:false,
             handle:'',
             company:'',
-            website:'',
+            lang:'',
+            dob:'',
             location:'',
             status:'',
             skills:'',
@@ -40,7 +41,8 @@ class CreateProfile extends Component{
         const profileData={
             handle: this.state.handle,
       company: this.state.company,
-      website: this.state.website,
+      dob: this.state.dob,
+      lang: this.state.lang,
       location: this.state.location,
       status: this.state.status,
       skills: this.state.skills,
@@ -147,12 +149,12 @@ class CreateProfile extends Component{
                 error={errors.company} 
                 info="Could be your own company or one you work for"/>
             <Textfieldgrp 
-                placeholder="Website"
-                name="website"
-                value={this.state.website}
+                placeholder="Enter DoB"
+                name="dob"
+                value={this.state.dob}
                 onChange={this.onChange}
-                error={errors.website} 
-                info="Could be your own or a company website"/>  
+                error={errors.dob} 
+                info="Enter DoB"/>  
             <Textfieldgrp 
                 placeholder="Location"
                 name="location"
@@ -167,6 +169,13 @@ class CreateProfile extends Component{
                 onChange={this.onChange}
                 error={errors.skills} 
                 info="Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)"/> 
+            <Textfieldgrp 
+                placeholder="Known Languages"
+                name="lang"
+                value={this.state.lang}
+                onChange={this.onChange}
+                error={errors.lang} 
+                info="Please use comma separated values (eg. Tamil,English)"/> 
             <Textfieldgrp 
                 placeholder="Github Username"
                 name="githubuser"
