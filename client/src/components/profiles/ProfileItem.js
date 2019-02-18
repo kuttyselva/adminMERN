@@ -12,7 +12,7 @@ class ProfileItem extends Component {
         <div className="row">
           <div className="col-2"> 
                   
-             <img src={profile.user.avatar} alt="" className="rounded-circle" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
+             <img src={profile.user.avatar} alt="" className="rounded-circles" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
           </div>
           <div className="col-lg-6 col-md-4 col-8">
             <h3>{profile.user.name}</h3>

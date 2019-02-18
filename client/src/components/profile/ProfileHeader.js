@@ -114,7 +114,7 @@ class ProfileHeader extends Component {
     <div class="col-twelve">
 
       <h5>Hello, World.</h5>
-      <h1>I'm {profile.user.name}.</h1><br/>
+      <h1>I'm {profile.handle}.</h1><br/>
 
       <p class="intro-position">
         <span>{profile.status}</span><br/>
