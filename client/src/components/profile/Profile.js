@@ -26,6 +26,7 @@ class Profile extends Component {
 
   render() {
     const { profile, loading } = this.props.profile;
+    const {auth} =this.props.auth;
     
    
     
@@ -41,7 +42,7 @@ class Profile extends Component {
             <div className="col-md-6" />
           </div>
   
-          <ProfileHeader profile={profile} />
+          <ProfileHeader profile={profile} auth={auth} />
           {/* <ProfileAbout profile={profile} />
           <ProfileCreds
             education={profile.education}
@@ -55,9 +56,10 @@ class Profile extends Component {
     }
 
     return (
-      <div className="profile" style={{margin:'50px'}}>
+      <div className="profile" >
+      <br/><br/>
        
-          <div className="row">
+          <div className="container-fluid">
             <div className="col-md-12">{profileContent}</div>
           </div>
           
@@ -72,12 +74,14 @@ class Profile extends Component {
 Profile.propTypes = {
   getProfileByHandle: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
+  auth:PropTypes.object.isRequired,
 
 
 };
 
 const mapStateToProps = state => ({
   profile: state.profile,
+  auth:state.auth
 
  
   

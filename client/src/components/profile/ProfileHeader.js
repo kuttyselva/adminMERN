@@ -7,14 +7,30 @@ import Moment from 'react-moment';
 class ProfileHeader extends Component {
   render() {
     const { profile } = this.props;
+   
     
     const { experience, education } = this.props.profile;
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
+      <li>
+        <div className="progress percent90"><span>90%</span></div>
+        <strong>{skill}</strong>
+      </li>
       
-        <li className="skill-percentage">{skill}</li>
+        
       </div>
     ));
+    const lang = profile.lang.map((langs, index) => (
+      <div key={index} >
+     
+        
+        <p>{langs}</p>
+      
+      
+        
+      </div>
+    ));
+   
 
 
     const expItems = experience.map(exp => (
@@ -86,231 +102,164 @@ class ProfileHeader extends Component {
 
       
     ));
-    
-    return (
+    return(
+    <div>
+      <section id="intro">   
 
+<div class="intro-overlay"></div>	
 
-<div >
+<div class="intro-content">
+  <div class="container-fluid">
 
-<div className= "resume-wrapper">
-      <div className="row">
-      <div className="col-md-4">
+    <div class="col-twelve">
+
+      <h5>Hello, World.</h5>
+      <h1>I'm {profile.user.name}.</h1><br/>
+
+      <p class="intro-position">
+        <span>{profile.status}</span><br/>
       
-       
-      <section className="profile section-padding">
-		<div >
-			<div className="picture-resume-wrapper">
-        <div className="picture-resume">
-        <span><img src= {profile.user.avatar} alt="" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}} /></span>
-        <svg version="1.1" viewBox="0 0 350 350">
-  
-  <defs>
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
-    </filter>
-  </defs>
-  
-  
-<g filter="url(#goo)" >  
-  
-  <circle id="main_circle" className="st0" cx="171.5" cy="175.6" r="130"/>
-  
-  <circle id="circle" className="bubble0 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble1 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble2 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble3 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble4 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble5 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble6 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble7 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble8 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble9 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" className="bubble10 st1" cx="171.5" cy="175.6" r="122.7"/>
-</g>  
-</svg>
-      </div>
-         <div className="clearfix"></div>
- </div>
-      <div className="name-wrapper">
-        <h1>{profile.handle}</h1>
-      </div>
-      <div className="clearfix"></div>
-      <div className="contact-info clearfix" style={{marginLeft:'-10%',fontSize:'24px',width:'100%'}}>
-      
-      	<ul className="list-titles">
-      		<li>Status</li>
-      		<li>Works at</li>
-      		<li>Mail</li>
-      	</ul>
-        <ul className="list-content ">
-        	<li>{profile.status}</li> 
-        	<li>{isEmpty(profile.company) ? null : <p> {profile.company}</p>}</li>
-        	<li>{isEmpty(profile.location) ? null : <p>{profile.user.email}</p>}</li>
-        </ul>
-      </div>
-      <div className="contact-presentation" style={{marginLeft:'-10%',fontSize:'24px'}}>
-      <h4 className="text-center">Bio</h4>
-      	<p className="text-center">{profile.bio} </p>
+      </p><br/>
+
+    <a class="button stroke smoothscroll" href="" title="">{isEmpty(profile.company) ? null : <p> Works in {profile.company}</p>}</a>
+
+    </div>  
     
-      </div>
-      <div className="contact-social clearfix" style={{marginLeft:'-10%'}}>
-      	<ul>
-        <p>
+  </div>   		 		
+</div>
+
+<ul class="intro-social">        
+<p>
                 {isEmpty(profile.website) ? null : (
                   <a
-                    className="text-dark p-2"
+                    className="text-light p-2"
                     href={profile.website}
                     target="_blank"
                   >
-                    <i className="fas fa-globe fa-2x" />
+                    <i className="fas fa-globe fa" />
                   </a>
                 )}
 
                 {isEmpty(profile.social && profile.social.twitter) ? null : (
                   <a
-                    className="text-dark p-2"
+                    className="text-light p-2"
                     href={profile.social.twitter}
                     target="_blank"
                   >
-                    <i className="fab fa-twitter fa-2x" />
+                    <i className="fab fa-twitter " />
                   </a>
                 )}
 
                 {isEmpty(profile.social && profile.social.facebook) ? null : (
                   <a
-                    className="text-dark p-2"
+                    className="text-light p-2"
                     href={profile.social.facebook}
                     target="_blank"
                   >
-                    <i className="fab fa-facebook fa-2x" />
+                    <i className="fab fa-facebook " />
                   </a>
                 )}
 
                 {isEmpty(profile.social && profile.social.linkedin) ? null : (
                   <a
-                    className="text-dark "
+                    className="text-light "
                     href={profile.social.linkedin}
                     target="_blank"
                   >
-                    <i className="fab fa-linkedin fa-2x" />
+                    <i className="fab fa-linkedin " />
                   </a>
                 )}
 
                 {isEmpty(profile.social && profile.social.youtube) ? null : (
                   <a
-                    className="text-dark p-2"
+                    className="text-light p-2"
                     href={profile.social.youtube}
                     target="_blank"
                   >
-                    <i className="fab fa-youtube fa-2x" />
+                    <i className="fab fa-youtube " />
                   </a>
                 )}
 
                 {isEmpty(profile.social && profile.social.instagram) ? null : (
                   <a
-                    className="text-dark p-2"
+                    className="text-lignt p-2"
                     href={profile.social.instagram}
                     target="_blank"
                   >
-                    <i className="fab fa-instagram fa-2x" />
+                    <i className="fab fa-instagram " />
                   </a>
                 )}
               </p>
-      	</ul>
-        
-      </div>
-		</div>
-	</section>
-  
+ </ul>    	
 
+</section> 
+
+
+
+<section id="about">  
+
+<div class="row section-intro">
+  <div class="col-twelve">
+
+    <h5>About</h5>
+    <h1>Let me introduce myself.</h1>
+
+    <div class="intro-info">
+
+      <img src= {profile.user.avatar} alt="" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
+
+      <p class="lead text-center">{profile.bio}</p>
+    </div>   			
+
+  </div>   		
+</div> 
+
+<div class="row about-content">
+
+  <div class="col-six tab-full">
+
+    <h3>Profile</h3><br/>
+    <p>Here you can see my profile info.</p><br/>
+
+    <ul class="info-list"><br/>
+      <li>
+        <strong>Fullname:</strong><br/>
+        <span>{profile.user.name}</span>
+      </li>
+      <li>
+        <strong>Birth Date:</strong><br/>
+        <span>{profile.dob}</span>
+      </li>
+      <li>
+        <strong>Known Languages:</strong><br/>
+       {lang}
+      </li><br/>
      
-      </div>
+      <li>
+        <strong>Email:</strong>
+        <span>{profile.user.email}</span>
+      </li><br/>
+    </ul>
+  </div>
+  <div class="col-six tab-full">
+    <h3>Skills</h3>
+    <p>some of my skill hierarchy , in which i spend more time on it, to take a coffee with code </p>
 
-      <div className="col-md-8">
-       
-
-
-       <section className="experience section-padding">
-  	<div >
-  		<h3 className="experience-title">Experience</h3>
-      
-      <div className="experience-wrapper">
-      
-
-
-      <div className="row" >
-        
-        
-          {expItems.length > 0 ? (
-            <ul className="list-group">{expItems}</ul>
-          ) : (
-            <p className="text-center">No Experience Listed</p>
-          )}
-        </div>
-
-
-
-       
-      
-        
-      </div>
-      
-      <div className="section-wrapper clearfix">
-      	<h3 className="section-title">Skills</h3>  
-        	<ul>
-          <div>
+   <ul class="skill-bars">
+   <div>
                 {skills}
-              </div>  
-        	</ul>
-        
-      </div>
-      
-      <div className="section-wrapper clearfix">
-        <h3 className="section-title">Education</h3> 
-        <div >
-        
-        
-        {expItems.length > 0 ? (
-            <ul >{eduItems}</ul>
-          ) : (
-            <p className="text-center">No Experience Listed</p>
-          )}
-        </div> 
-      </div>
-      
-  	</div>
-  </section>
-  
-      
-      </div>
-    </div>
+              </div>
+   </ul>		
 
-
-
-
-
-<div>
-
-      
-
-
-	
-  <div className="clearfix"></div>
-</div>
-</div>
-
-
+  </div>
 
 </div>
 
 
-
-  
-     
-     
-    );
+</section>
+    </div>);
   }
+
 }
 
 export default ProfileHeader;

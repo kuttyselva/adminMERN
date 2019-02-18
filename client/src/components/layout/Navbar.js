@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+ import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
@@ -27,7 +27,7 @@ class Navbar extends Component {
         </li>
       <li className="nav-item">
         <a href="" onClick={this.onLogoutClick.bind(this)} className="nav-link">
-        <img className="rounded-circle" src={user.avatar} alt={user.name} title="you must have a gravatar connected to your gmail" style={{width:'30px' ,marginRight:'5px' }}/>{ ' '}
+        <img className="rounded-circles" src={user.avatar} alt={user.name} title="you must have a gravatar connected to your gmail" style={{width:'30px' ,marginRight:'5px' }}/>{ ' '}
          logout</a>
         
       </li>
@@ -45,7 +45,7 @@ class Navbar extends Component {
     <div style={{width:'80%'}}>
       <nav className="navbar  navbar-expand-sm fixed-top navbar-light bg-light  mb-4">
  
-      <Link className="navbar-brand" to="/">Hash&lt; &#47;&gt;</Link>
+      <Link className="navbar-brand" to="/"><h1 style={{fontFamily: "poppins-bold"}}>Hash&lt; &#47;&gt;</h1></Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>

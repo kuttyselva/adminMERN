@@ -47,7 +47,7 @@ class ProfileGithub extends Component {
                   
              <img src={"https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"} alt="" className="rounded-circle" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
           </div>
-            <h3 style={{float:'left',marginLeft:'25%',marginTop:'-10%'}}>
+            <h3 >
               <a href={repo.html_url} className="text-dark" >
                 {repo.name}
               </a>
@@ -76,7 +76,7 @@ class ProfileGithub extends Component {
         <h1 style={{marginLeft:'35%'}}>Latest Github Repos</h1>
         <br/>
         {repoItems}
-        <br/><br/>
+        <br/><br/><br/><br/><br/>
       </div>
     );
   }
