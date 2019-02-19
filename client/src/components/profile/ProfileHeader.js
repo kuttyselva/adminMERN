@@ -34,34 +34,40 @@ class ProfileHeader extends Component {
 
 
     const expItems = experience.map(exp => (
-      <div>
-      
-    <div className="company-wrapper clearfix" key={exp._id}>
-      		<div className="experience-title"><h2>{exp.company}</h2></div>
-          <div className="time"><p>
-          <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
+
+
+
+<div class="timeline-block">
+
+<div class="timeline-ico">
+  <i class="fa fa-briefcase"></i>
+</div>
+
+<div class="timeline-header">
+  <h3>{exp.company}</h3><br/>
+  <p> <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
           {exp.to === null ? (
             ' Now'
           ) : (
             <Moment format="YYYY/MM/DD">{exp.to}</Moment>
-          )}
-        </p></div> 
-        </div>
-      	        
-         <div className="job-wrapper clearfix">
-        	<div className="experience-title"><h2>{exp.title}</h2></div> 
-          <div className="company-description" >
-          <p>
-          {exp.description === '' ? null : (
+          )}</p><br/>
+</div>
+
+<div class="timeline-content">
+  <h4>{exp.title}</h4><br/>
+  <p>{exp.description === '' ? null : (
             <span>
               <strong>Description: </strong> {exp.description}
             </span>
-          )}
-        </p>  
-          </div>
-        </div>
+          )}</p>
+          
+</div>
+<br/><br/>
+</div>
 
-        </div>
+
+
+     
 
     ));
 
@@ -69,33 +75,34 @@ class ProfileHeader extends Component {
     const eduItems = education.map(edu => (
 
 
-<div style={{color:'#000000'}}> 
-<div class="card w-100" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
-  <div class="card-body">
-    <h5 class="card-title text-center">Institution</h5>
-    <p class="card-text" style={{fontSize:'1.2em'}}>{edu.school} <br/>  <Moment format="YYYY/MM/DD">{edu.from}</Moment> -
-            {edu.to === null ? (
+
+
+<div class="timeline-block">
+
+<div class="timeline-ico">
+  <i class="fa fa-graduation-cap"></i>
+</div>
+        
+<div class="timeline-header">
+<h3>{edu.school}</h3><br/>
+  <h3>{edu.degree}</h3><br/>
+  <p>{edu.to === null ? (
               ' Now'
             ) : (
               <Moment format="YYYY/MM/DD">{edu.to}</Moment>
-            )} <br/>
-            <strong>Degree:</strong> {edu.degree} <br/>   <strong>Field Of Study:</strong> {edu.fieldofstudy}
-            
-            {edu.description === '' ? null : (
+            )}</p>
+</div>
+
+<div class="timeline-content">
+  <h4>96%</h4><br/>
+  <p>{edu.description === '' ? null : (
               <span>
                 <strong>Description: </strong> {edu.description}
               </span>
-            )}
-            
-            
-            
-             </p>
-   
-  </div>
+            )}</p>
 </div>
- <br/>
-</div>
-
+<br/><br/>
+</div> 
 
 
 
@@ -257,6 +264,74 @@ class ProfileHeader extends Component {
 
 
 </section>
+
+<section id="resume" class="grey-section">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Resume</h5>
+   			<h1>More of my credentials.</h1>
+
+   			<p class="lead">Here comes my biography.</p>
+
+   		</div>   		
+   	</div> 
+
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Education</h2>
+
+   		</div> 
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+         
+        
+        {eduItems.length > 0 ? (
+          <div>{eduItems}</div>
+        ) : (
+          <p className="text-center">No Experience Listed</p>
+        )}
+      </div>
+
+   			</div>   			
+
+   		</div> 
+   		
+   
+   	
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Career</h2>
+
+   		</div> 
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+         {expItems.length > 0 ? (
+          <div>{expItems}</div>
+        ) : (
+          <p className="text-center">No Experience Listed</p>
+        )}
+				
+   			</div>   			
+
+   		</div> 
+   		
+   	</div> 
+		
+	</section> 
+
+
+
     </div>);
   }
 

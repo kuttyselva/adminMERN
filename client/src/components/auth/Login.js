@@ -46,17 +46,29 @@ class Login extends Component{
         return(
 
 
-            
-            <div className="login" >
-            <br/><br/><br/>
-            <div className="container">
-              <div className="row" >
-                <div className="col-md-8 m-auto">
-                  <h1 className="display-4 text-center">Log In</h1>
-                  <p className="lead text-center">Sign in to your DevConnector account</p>
-                  <form onSubmit={this.onSubmit} >
 
-                <Textfieldgrp
+<section id="contact" style={{height:'-webkit-fill-available'}}>
+
+<div class="row section-intro" >
+   <div class="col-twelve">
+
+       <h1 style={{color:'#FF0077'}}>Login</h1><br/>
+       <h2 style={{color:'#ffffff'}}>Sign in to your DevConnector account</h2>
+
+      
+   </div> 
+</div> 
+
+<div class="row contact-form">
+
+   <div class="col-twelve">
+
+  
+    <form name="contactForm" id="contactForm" onSubmit={this.onSubmit}>
+          <fieldset>
+
+          <div class="form-field">
+          <Textfieldgrp
                     placeholder="Email Address"
                     name="email"
                     type="email"
@@ -64,23 +76,57 @@ class Login extends Component{
                     onChange={this.onChange}
                     error={errors.email}
                 />
-                <Textfieldgrp
+               
+
+                    
+          </div>
+          <div class="form-field">
+          <Textfieldgrp
                     placeholder="Password"
                     name="password"
                     type="password"
                     value={this.state.password}
                     onChange={this.onChange}
                     error={errors.password}
-                />
-
-                    
-                  
-                    <input type="submit" className="btn btn-dark btn-block mt-4" />
-                  </form>
-                </div>
-              </div>
-            </div>
+                />           </div>
+                           
+         <div class="form-field">
+             <button class="submitform" type="submit">Submit</button>
+             <div id="submit-loader">
+                <div class="text-loader">Sending...</div>                             
+                     <div class="s-loader">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                        </div>
+                    </div>
           </div>
+
+          </fieldset>
+      </form> 
+
+  
+    <div id="message-warning">            	
+    </div>            
+  
+      <div id="message-success">
+       <i class="fa fa-check"></i>Your message was sent, thank you!<br/>
+      </div>
+
+ </div> 
+   
+</div> 
+
+
+
+</section> 
+
+
+
+
+
+            
+          
         );
     }
 }
