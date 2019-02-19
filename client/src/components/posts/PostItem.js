@@ -59,8 +59,8 @@ class PostItem extends Component {
                     className={classnames('fas fa-thumbs-up', {
                       'text-info': this.findUserLike(post.likes)
                     })}
-                  />
-                  <span className="badge badge-light">{post.likes.length}</span>
+                  />&nbsp;
+                  <span className="badge badge-light">{post.likes.length}</span>&nbsp;
                 </button>
                 <button
                   onClick={this.onUnlikeClick.bind(this, post._id)}
@@ -68,10 +68,10 @@ class PostItem extends Component {
                   className="btn btn-light mr-1"
                 >
                   <i className="text-secondary fas fa-thumbs-down" />
-                </button>
-                <Link to={`/post/${post._id}`} className="btn btn-dark mr-1">
+                </button>&nbsp;
+                <Link to={`/post/${post._id}`} className="btn btn-outline-info mr-1">
                   Comments
-                </Link>
+                </Link>&nbsp;
                 {post.user === auth.user.id ? (
                   <button
                     onClick={this.onDeleteClick.bind(this, post._id)}
