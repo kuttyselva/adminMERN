@@ -73,21 +73,21 @@ class Addach extends Component {
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <Textfieldgrp
-                  placeholder="* venue or college"
+                  placeholder="* Venue or Location"
                   name="venue"
                   value={this.state.venue}
                   onChange={this.onChange}
                   error={errors.venue}
                 />
                 <Textfieldgrp
-                  placeholder="Standard or award"
+                  placeholder="Award placed"
                   name="award"
                   value={this.state.award}
                   onChange={this.onChange}
                   error={errors.award}
                 />
                 <Textfieldgrp
-                  placeholder="If college enter Field of Study"
+                  placeholder="Event name"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.onChange}

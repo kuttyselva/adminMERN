@@ -48,16 +48,29 @@ onSubmit(e){
      
         const {errors} =this.state;
         return(
-            <div className="register">
-           <br/><br/><br/>
-            <div className="container">
-              <div className="row">
-                <div className="col-md-8 m-auto">
-                  <h1 className="display-4 text-center">Sign Up</h1>
-                  <p className="lead text-center">Create your DevConnector account</p>
-                  <form noValidate onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                      <input type="text" className={classnames('form-control form-control-lg',{'is-invalid': errors.name})} value={this.state.name} onChange={this.onChange.bind(this)} placeholder="Name" name="name" />
+     
+<section id="contact" style={{height:'-webkit-fill-available'}}>
+
+<div class="row section-intro" >
+   <div class="col-twelve">
+
+       <h1 style={{color:'#FF0077'}}>Login</h1><br/>
+       <h2 style={{color:'#ffffff'}}>Sign in to your DevConnector account</h2>
+
+      
+   </div> 
+</div> 
+
+<div class="row contact-form">
+
+   <div class="col-twelve">
+
+  
+    <form name="contactForm" id="contactForm" onSubmit={this.onSubmit}>
+          <fieldset>
+
+          <div class="form-field" >
+                      <input style={{color:'#FF0077'}} type="text" className={classnames('form-control form-control-lg',{'is-invalid': errors.name})} value={this.state.name} onChange={this.onChange.bind(this)} placeholder="Name" name="name" />
                       {errors.name && (<div className="invalid-feedback">{errors.name}</div>)}
                     </div>
                     <Textfieldgrp
@@ -86,11 +99,25 @@ onSubmit(e){
                 />
                     
                     <input type="submit" className="btn btn-dark btn-block mt-4" />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </fieldset>
+      </form> 
+
+  
+    <div id="message-warning">            	
+    </div>            
+  
+      <div id="message-success">
+       <i class="fa fa-check"></i>Your message was sent, thank you!<br/>
+      </div>
+
+ </div> 
+   
+</div> 
+
+
+
+</section> 
+
         );
     }
 }

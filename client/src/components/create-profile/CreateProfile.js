@@ -125,12 +125,12 @@ class CreateProfile extends Component{
           <small className="d-block pb-3">* = required field</small>
           <form onSubmit={this.onSubmit}>
             <Textfieldgrp 
-                placeholder="* Profile handle"
+                placeholder="* Profile name"
                 name="handle"
                 value={this.state.handle}
                 onChange={this.onChange}
                 error={errors.handle} 
-                info="A unique handle for your profile URL. max 5 letters"/>
+                info="A unique name for your profile URL. max 5 letters"/>
 
             <Selectlistgrp 
                 placeholder="Status"
@@ -149,7 +149,7 @@ class CreateProfile extends Component{
                 error={errors.company} 
                 info="Could be your own company or one you work for"/>
             <Textfieldgrp 
-                placeholder="Enter DoB"
+                placeholder="Enter DoB (eg. 05-july-1999)"
                 name="dob"
                 value={this.state.dob}
                 onChange={this.onChange}

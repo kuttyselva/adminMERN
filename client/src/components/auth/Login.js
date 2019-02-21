@@ -67,7 +67,7 @@ class Login extends Component{
     <form name="contactForm" id="contactForm" onSubmit={this.onSubmit}>
           <fieldset>
 
-          <div class="form-field">
+          <div class="form-field" >
           <Textfieldgrp
                     placeholder="Email Address"
                     name="email"
@@ -75,7 +75,7 @@ class Login extends Component{
                     value={this.state.email}
                     onChange={this.onChange}
                     error={errors.email}
-                />
+                    />
                
 
                     
