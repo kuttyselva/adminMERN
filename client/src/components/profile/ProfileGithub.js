@@ -73,7 +73,7 @@ class ProfileGithub extends Component {
     return (
       <div ref="myRef" >
        <br/>
-        <h1 style={{marginLeft:'35%'}}>Latest Github Repos</h1>
+        <h1 style={{marginLeft:'35%',color:'#FF0077',fontSize:'4rem'}}>Latest Github Repos</h1>
         <br/>
         {repoItems}
         <br/><br/><br/><br/><br/>

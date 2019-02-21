@@ -9,7 +9,7 @@ class ProfileHeader extends Component {
     const { profile } = this.props;
    
     
-    const { experience, education } = this.props.profile;
+    const { experience, education ,achieve} = this.props.profile;
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
       <li>
@@ -109,6 +109,40 @@ class ProfileHeader extends Component {
 
       
     ));
+
+
+
+
+    const achItems = achieve.map(ach => (
+
+
+
+
+      <div class="timeline-block">
+      
+      <div class="timeline-ico">
+      <i class="fas fa-award"></i>
+      </div>
+              
+      <div class="timeline-header">
+      <h3>{ach.venue}</h3><br/>
+        <h3>{ach.event}</h3><br/>
+      
+      </div>
+      
+      <div class="timeline-content">
+        <h4>{ach.award}</h4><br/>
+        <p>{ach.description === '' ? null : (
+                    <span>
+                      <strong>Description: </strong> {ach.description}
+                    </span>
+                  )}</p>
+      </div>
+      <br/><br/>
+      </div> 
+    ));      
+
+
     return(
     <div>
       <section id="intro">   
@@ -282,7 +316,7 @@ class ProfileHeader extends Component {
 
    		<div class="col-twelve resume-header">
 
-   			<h2>Education</h2>
+   			<h1 style={{color:'#FF0077'}}>Education</h1>
 
    		</div> 
 
@@ -309,7 +343,7 @@ class ProfileHeader extends Component {
 
    		<div class="col-twelve resume-header">
 
-   			<h2>Career</h2>
+   			<h1  style={{color:'#FF0077'}}>Career</h1>
 
    		</div> 
 
@@ -318,6 +352,29 @@ class ProfileHeader extends Component {
    			<div class="timeline-wrap">
          {expItems.length > 0 ? (
           <div>{expItems}</div>
+        ) : (
+          <p className="text-center">No Experience Listed</p>
+        )}
+				
+   			</div>   			
+
+   		</div> 
+   		
+   	</div> 
+
+     <div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h1  style={{color:'#FF0077'}}>Achievements</h1>
+
+   		</div> 
+
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+         {achItems.length > 0 ? (
+          <div>{achItems}</div>
         ) : (
           <p className="text-center">No Experience Listed</p>
         )}

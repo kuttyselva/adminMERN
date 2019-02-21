@@ -2,17 +2,17 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 const ProfileActions=()=> {
   return (
-    <div className="btn-group mb-4" role="group">
+    <div className="btn-group mb-4 text-center" role="group">
     <Link to="/edit-profile" className="btn btn-light">
-      <i className="fas fa-user-circle text-info mr-1"></i> Edit Profile</Link>
+      <i className="fas fa-user-circle text-danger mr-1"></i> Edit Profile</Link>
     <Link to="/add-experience" className="btn btn-light">
-      <i className="fab fa-black-tie text-info mr-1"></i>
+      <i className="fab fa-black-tie text-danger mr-1"></i>
       Add Experience</Link>
     <Link to="/add-education" className="btn btn-light">
-      <i className="fas fa-graduation-cap text-info mr-1"></i>
+      <i className="fas fa-graduation-cap text-danger mr-1"></i>
       Add Education</Link>
       <Link to="/add-achievement" className="btn btn-light">
-      <i className="fas fa-graduation-cap text-info mr-1"></i>
+      <i className="fas fa-graduation-cap text-danger mr-1"></i>
       Add Achievement</Link>
   </div>
   )

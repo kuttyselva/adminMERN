@@ -30,7 +30,7 @@ class Achievement extends Component {
     ));
     return (
       <div>
-        <h4 className="mb-4">Education Credentials</h4>
+        <h4 className="mb-4">Achievements</h4>
         
         <table className="table table-borderless table-hover">
           <thead className="thead-dark">

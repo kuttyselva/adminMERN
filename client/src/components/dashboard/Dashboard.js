@@ -28,7 +28,7 @@ class Dashboard extends Component{
             //check if logged user have profile
             if(Object.keys(profile).length>0){
                 dashboardContent=(
-                    <div> <p className="lead test-muted">welcome <Link to={`/profile/${profile.handle}`} >{user.name}</Link> </p>
+                    <div className="container"> <p className="lead test-muted">welcome <Link to={`/profile/${profile.handle}`} >{user.name}</Link> </p>
                     <ProfileActions/>
                     <Experience experience={profile.experience}/>
                     <Achievement achievement={profile.achieve}/>
