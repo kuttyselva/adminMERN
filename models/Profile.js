@@ -114,6 +114,20 @@ const ProfileSchema=new Schema({
         }
 
     }],
+    project:[{
+        name:{
+        type:String,
+        required:true
+        },
+       team:{
+          type:String,
+          required:true 
+       },
+        description:{
+            type:String
+        }
+
+    }],
     social:{
         web:{
             type:String

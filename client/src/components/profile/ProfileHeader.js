@@ -9,7 +9,7 @@ class ProfileHeader extends Component {
     const { profile } = this.props;
    
     
-    const { experience, education ,achieve} = this.props.profile;
+    const { experience, education ,achieve,project} = this.props.profile;
     const skills = profile.skills.map((skill, index) => (
       <div key={index} className="p-3">
       <li>
@@ -70,6 +70,39 @@ class ProfileHeader extends Component {
      
 
     ));
+
+
+
+    const proItems = project.map(pro => (
+
+
+
+      <div className="card card-body bg-white mb-3" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
+      <div className="row">
+        <div className="col-2"> 
+                
+           <img src={profile.user.avatar} alt="" className="rounded-circles" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
+        </div>
+        <div className="col-lg-6 col-md-4 col-8">
+      	<h1 className="text-center" style={{color:'#FF0077'}}>{pro.name}</h1>
+          
+          <p>
+            <h3>Members Worked  <h3 style={{color:'#FF0077'}}>{pro.team}</h3>  </h3>
+           
+          </p>
+         <p>Project Description {pro.description}</p>
+         
+        </div>
+        
+      </div>
+    </div>
+
+
+      
+           
+      
+          ));
+
 
 
     const eduItems = education.map(edu => (
@@ -386,6 +419,33 @@ class ProfileHeader extends Component {
    	</div> 
 		
 	</section> 
+  <section id="resume" class="grey-section">
+
+<div class="row section-intro">
+   <div class="col-twelve">
+
+     <h5>Projects</h5>
+     <h1>More of my Works</h1>
+
+   
+
+   </div>   		
+ </div> 
+  <div className="container-fluid">
+  <div className="row">
+  
+{proItems.length > 0 ? (
+  <div>{proItems}</div>
+) : (
+  <p className="text-center"></p>
+)}
+
+  </div>
+  
+
+</div>
+
+</section>
 
 
 

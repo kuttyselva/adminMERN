@@ -95,6 +95,21 @@ export const addEducation = (eduData, history) => dispatch => {
             })
           );
       };
+
+//add project
+      export const addProject = (proData, history) => dispatch => {
+        axios
+          .post('/api/profile/project', proData)
+          .then(res => history.push('/dashboard'))
+          .catch(err =>
+            dispatch({
+              type: GET_ERRORS,
+              payload: err.response.data
+            })
+          );
+      };
+
+
       // Add experience
 export const addExperience = (expData, history) => dispatch => {
     axios
@@ -140,6 +155,24 @@ export const deleteExperience = id => dispatch => {
         })
       );
   };
+//delect project
+  export const deleteProject = id => dispatch => {
+    axios
+      .delete(`/api/profile/project/${id}`)
+      .then(res =>
+        dispatch({
+          type: GET_PROFILE,
+          payload: res.data
+        })
+      )
+      .catch(err =>
+        dispatch({
+          type: GET_ERRORS,
+          payload: err.response.data
+        })
+      );
+  };
+
   // Delete Education
   export const deleteEducation = id => dispatch => {
     axios

@@ -4,15 +4,14 @@ import Textfieldgrp from '../common/Textfieldgrp';
 import Textareagrp from '../common/Textareagrp';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addAchieve } from '../../actions/profileActions';
+import { addProject } from '../../actions/profileActions';
 
-class Addach extends Component {
+class Addpro extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      venue: '',
-      award: '',
-      event: '',
+      name: '',
+      team: '',
       description: '',
       errors: {},
       disabled: false
@@ -32,15 +31,13 @@ class Addach extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const achData = {
-      venue: this.state.venue,
-      award: this.state.award,
-      event: this.state.fieldofstudy,
-     
+    const proData = {
+      name: this.state.name,
+      team: this.state.team,     
       description: this.state.description
     };
 
-    this.props.addAchieve(achData, this.props.history);
+    this.props.addProject(proData, this.props.history);
   }
 
   onChange(e) {
@@ -66,41 +63,35 @@ class Addach extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Achievement</h1>
+              <h1 className="display-4 text-center">Add Project</h1>
               <p className="lead text-center">
-                Add any events,ppts,projects presentations etc that you have attended
+                Add any Mini Projects, or Pro Projects that you have done
               </p>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <Textfieldgrp
-                  placeholder="* Venue or Location"
-                  name="venue"
-                  value={this.state.venue}
+                  placeholder="* name of Project"
+                  name="name"
+                  value={this.state.name}
                   onChange={this.onChange}
-                  error={errors.venue}
+                  error={errors.name}
                 />
                 <Textfieldgrp
-                  placeholder="Award placed"
-                  name="award"
-                  value={this.state.award}
+                  placeholder="No of Team members"
+                  name="team"
+                  value={this.state.team}
                   onChange={this.onChange}
-                  error={errors.award}
-                />
-                <Textfieldgrp
-                  placeholder="Event name"
-                  name="fieldofstudy"
-                  value={this.state.fieldofstudy}
-                  onChange={this.onChange}
-                  error={errors.fieldofstudy}
+                  error={errors.team}
                 />
                 
+                
                 <Textareagrp
-                  placeholder="Program Description"
+                  placeholder="Project Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="Tell us about the program that you were in"
+                  info="Tell us about the project .."
                 />
                 <input
                   type="submit"
@@ -117,8 +108,8 @@ class Addach extends Component {
   }
 }
 
-Addach.propTypes = {
-  addAchieve: PropTypes.func.isRequired,
+Addpro.propTypes = {
+  addProject: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -128,6 +119,6 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addAchieve })(
-  withRouter(Addach)
+export default connect(mapStateToProps, { addProject })(
+  withRouter(Addpro)
 );

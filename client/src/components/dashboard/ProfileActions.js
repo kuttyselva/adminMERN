@@ -12,8 +12,12 @@ const ProfileActions=()=> {
       <i className="fas fa-graduation-cap text-danger mr-1"></i>
       Add Education</Link>
       <Link to="/add-achievement" className="btn btn-light">
-      <i className="fas fa-graduation-cap text-danger mr-1"></i>
+      <i className="fas fa-medal text-danger mr-1"></i>
+     
       Add Achievement</Link>
+      <Link to="/add-Project" className="btn btn-light">
+      <i className="fas fa-laptop-code text-danger mr-1"></i>
+      Add Project</Link>
   </div>
   )
 };

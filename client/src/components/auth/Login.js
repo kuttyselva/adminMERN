@@ -53,7 +53,7 @@ class Login extends Component{
    <div class="col-twelve">
 
        <h1 style={{color:'#FF0077'}}>Login</h1><br/>
-       <h2 style={{color:'#ffffff'}}>Sign in to your DevConnector account</h2>
+       <h2 style={{color:'#ffffff'}}>Sign in to your Circle account</h2>
 
       
    </div> 

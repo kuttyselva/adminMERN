@@ -6,6 +6,7 @@ const validateProfileInput=require('../../validation/profile');
 const validateExpInput=require('../../validation/experience');
 const validateEduInput=require('../../validation/education');
 const validateAchInput=require('../../validation/achieve');
+const validateProInput=require('../../validation/project');
 //load profile
 const Profile=require('../../models/Profile');
 //load user
@@ -170,6 +171,33 @@ router.post('/experience',passport.authenticate('jwt',{session:false}),(req,res)
     })
 });
 
+
+
+
+// @route   get api/profile/project
+//@desc     current profile
+//@access   private
+router.post('/project',passport.authenticate('jwt',{session:false}),(req,res)=>{
+    const {errors,isValid}=validateProInput(req.body);
+    if(!isValid){
+        //return errors
+        return res.status(400).json(errors);
+    }
+    Profile.findOne({user:req.user.id})
+    .then(profile=>{
+        const newpro={
+            name:req.body.name,
+            team:req.body.team,
+           
+            description:req.body.description
+        }
+        //add to exp
+        profile.project.unshift(newpro);
+        profile.save().then(profile => res.json(profile));
+    })
+});
+
+
 // @route   get api/profile/experience
 //@desc     current profile
 //@access   private
@@ -239,6 +267,30 @@ router.delete('/experience/:exp_id',passport.authenticate('jwt',{session:false})
        })
        .catch(err=> res.status(404).json(err));
     });
+
+
+
+// @route   DELETE api/profile/project/:proid
+//@desc   delete to project
+//@access   private
+router.delete('/project/:pro_id',passport.authenticate('jwt',{session:false}),(req,res)=>{
+    
+    Profile.findOne({user:req.user.id})
+    .then(profile=>{
+       //get remove index
+       const removeind=profile.project
+       .map(item =>item.id)
+       .indexOf(req.params.pro_id);
+       //splice out array
+       profile.project.splice(removeind,1);
+       //save
+       profile.save().then(profile=>res.json(profile));
+       })
+       .catch(err=> res.status(404).json(err));
+    });
+
+
+
     // @route   DELETE api/profile/achieve/:achid
 //@desc   delete to profile
 //@access   private
