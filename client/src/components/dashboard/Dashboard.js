@@ -29,7 +29,11 @@ class Dashboard extends Component{
             //check if logged user have profile
             if(Object.keys(profile).length>0){
                 dashboardContent=(
-                    <div className="container"> <p className="lead test-muted">welcome <Link to={`/profile/${profile.handle}`} >{user.name}</Link> </p>
+                    <div className="container"> <p className="lead test-muted text-center">welcome <Link to={`/profile/${profile.handle}`} >{user.name}</Link> </p>
+                    <div class="alert alert-primary text-center" role="alert">
+ 
+  <Link to="/profile-image">Do you want to change Your Profile Image?? </Link>
+</div>
                     <ProfileActions className="text-center"/>
                     <Experience experience={profile.experience}/>
                     <Achievement achievement={profile.achieve}/>

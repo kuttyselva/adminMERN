@@ -26,8 +26,11 @@ class Navbar extends Component {
           </Link>
         </li>
       <li className="nav-item">
+      <a  href="https://en.gravatar.com/gravatars/new" target="_blank"><img className="rounded-circles" src={user.avatar} alt={user.name} title="you must have a gravatar connected to your gmail" style={{width:'40px' ,marginRight:'5px' }}/>{ ' '}</a>
+      </li>
+      <li className="nav-item">
         <a href="" onClick={this.onLogoutClick.bind(this)} className="nav-link">
-        <img className="rounded-circles" src={user.avatar} alt={user.name} title="you must have a gravatar connected to your gmail" style={{width:'30px' ,marginRight:'5px' }}/>{ ' '}
+        
          logout</a>
         
       </li>

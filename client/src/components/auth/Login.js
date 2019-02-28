@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom';
 import propTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions/authActions';
@@ -106,11 +106,11 @@ class Login extends Component{
       </form> 
 
   
-    <div id="message-warning">            	
-    </div>            
+             
   
-      <div id="message-success">
-       <i class="fa fa-check"></i>Your message was sent, thank you!<br/>
+      <div>
+     <Link to="/register"> <h2 className="text-center" style={{color:'#ffffff'}}>New User ? Register Now</h2></Link>
+       <br/>
       </div>
 
  </div> 

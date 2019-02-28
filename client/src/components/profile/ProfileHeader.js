@@ -77,17 +77,17 @@ class ProfileHeader extends Component {
 
 
 
-      <div className="card card-body bg-white mb-3" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
+      <div className="card card-body  mb-3" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}>
       <div className="row">
         <div className="col-2"> 
                 
            <img src={profile.user.avatar} alt="" className="rounded-circles" style={{boxShadow:" 0px 0px 29px 0px rgba(122,120,122,0.95)"}}/>
         </div>
         <div className="col-lg-6 col-md-4 col-8">
-      	<h1 className="text-center" style={{color:'#FF0077'}}>{pro.name}</h1>
+      	<h1>Project Name :</h1><h1 className="text-center" style={{color:'#FF0077',marginTop:'-6%'}}>{pro.name}</h1><br/>
           
           <p>
-            <h3>Members Worked  <h3 style={{color:'#FF0077'}}>{pro.team}</h3>  </h3>
+            <h3>Members Worked :</h3> <h3 className="text-center" style={{color:'#FF0077',marginTop:'-5%'}}>{pro.team}</h3>  
            
           </p>
          <p>Project Description {pro.description}</p>
@@ -431,11 +431,11 @@ class ProfileHeader extends Component {
 
    </div>   		
  </div> 
-  <div className="container-fluid">
+  <div className="container">
   <div className="row">
   
 {proItems.length > 0 ? (
-  <div>{proItems}</div>
+  <div>{proItems} </div>
 ) : (
   <p className="text-center"></p>
 )}

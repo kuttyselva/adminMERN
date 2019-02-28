@@ -12,6 +12,7 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
+import Image from './components/dashboard/Image';
 import { clearCurrentProfile } from './actions/profileActions';
 import PrivateRoute from './components/common/PrivateRoute';
 import CreateProfile from './components/create-profile/CreateProfile';
@@ -69,6 +70,9 @@ class App extends Component {
         </Switch>
         <Switch>
         <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
+        </Switch>
+        <Switch>
+        <PrivateRoute exact path="/profile-image" component={Image}/>
         </Switch>
         <Switch>
         <PrivateRoute exact path="/edit-profile" component={EditProfile}/>

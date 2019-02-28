@@ -6,6 +6,7 @@ import {registeruser} from '../../actions/authActions';
 import Textfieldgrp from '../common/Textfieldgrp';
 
 
+
 import classnames from 'classnames';
  class Register extends Component{
 constructor(){
@@ -98,7 +99,17 @@ onSubmit(e){
                     error={errors.password2}
                 />
                     
-                    <input type="submit" className="btn btn-dark btn-block mt-4" />
+                    <div class="form-field">
+             <button class="submitform" type="submit">Submit</button>
+             <div id="submit-loader">
+                <div class="text-loader">Sending...</div>                             
+                     <div class="s-loader">
+                              <div class="bounce1"></div>
+                              <div class="bounce2"></div>
+                              <div class="bounce3"></div>
+                        </div>
+                    </div>
+          </div>
                     </fieldset>
       </form> 
 

@@ -15,12 +15,14 @@ import {connect} from 'react-redux'
      <br/><br/>
         <div className="row">
           <div className="col-md-12 text-center">
-            <h1 className="display-3 mb-4">Circle 
+            <h1 className="display-1 mb-4">Circle 
             </h1>
             <p className="lead"> Create a developer profile/portfolio, share posts and get help from other developers</p>
             <hr />
-            <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
-            <Link to="/login" className="btn btn-lg btn-light">Login</Link>
+            <div class="form-field">
+            <Link to="/register"> <button class="submitform" type="submit">Signup</button></Link>
+            <Link to="/login"> <button class="submitform" type="submit">Login</button></Link>
+            </div>
           </div>
         </div>
       </div>
