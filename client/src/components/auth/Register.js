@@ -21,8 +21,9 @@ constructor(){
     this.onChange=this.onChange.bind(this);
     this.onSubmit=this.onSubmit.bind(this);
 }
-onChange(e){
-    this.setState({[e.target.name]: e.target.value});
+onChange(event){
+   this.setState({[event.target.name]: event.target.value});
+
 }
 componentDidMount(){
   if(this.props.auth.isAuthenticated){
@@ -45,6 +46,11 @@ onSubmit(e){
     this.props.registeruser(newUser,this.props.history);
    
 }
+ AvoidSpace(event) {
+   
+  this.setState({[event.target.name]: event.target.value});
+  }
+
     render(){
      
         const {errors} =this.state;
@@ -71,7 +77,7 @@ onSubmit(e){
           <fieldset>
 
           <div class="form-field" >
-                      <input style={{color:'#FF0077'}} type="text" className={classnames('form-control form-control-lg',{'is-invalid': errors.name})} value={this.state.name} onChange={this.onChange.bind(this)} placeholder="Name" name="name" />
+                      <input style={{color:'#FF0077'}} type="text" className={classnames('form-control form-control-lg',{'is-invalid': errors.name})} value={this.state.name}  onChange={this.onChange.bind(this)} placeholder="Name (without spaces)" name="name" />
                       {errors.name && (<div className="invalid-feedback">{errors.name}</div>)}
                     </div>
                     <Textfieldgrp
@@ -124,9 +130,6 @@ onSubmit(e){
  </div> 
    
 </div> 
-
-
-
 </section> 
 
         );
