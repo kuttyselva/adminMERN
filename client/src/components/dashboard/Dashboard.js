@@ -34,6 +34,10 @@ class Dashboard extends Component{
  
   <Link to="/profile-image">Do you want to change Your Profile Image?? </Link>
 </div>
+<div class="alert alert-info text-center" role="alert">
+ 
+ <Link to="/feed">Any issues? write a post.  </Link>
+</div>
                     <ProfileActions className="text-center"/>
                     <Experience experience={profile.experience}/>
                     <Achievement achievement={profile.achieve}/>
